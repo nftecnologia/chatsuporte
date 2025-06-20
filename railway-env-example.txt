@@ -1,0 +1,39 @@
+# Configurações obrigatórias para Railway
+# Copie estas variáveis para o painel da Railway
+
+RAILS_ENV=production
+RACK_ENV=production
+
+# Gere uma chave secreta com: openssl rand -hex 64
+SECRET_KEY_BASE=your_secret_key_here
+
+# URL pública da sua aplicação (substitua pela URL da Railway)
+FRONTEND_URL=https://seu-app.railway.app
+
+# Configurações de ambiente
+INSTALLATION_ENV=railway
+RAILS_LOG_TO_STDOUT=enabled
+RAILS_SERVE_STATIC_FILES=true
+DISABLE_SPRING=1
+
+# Redis (configurado automaticamente pela Railway)
+REDIS_OPENSSL_VERIFY_MODE=none
+
+# Configurações opcionais
+SIDEKIQ_CONCURRENCY=5
+NODE_OPTIONS=--max-old-space-size=2048
+
+# Configurações de Email (opcional)
+# SMTP_DOMAIN=
+# SMTP_PORT=587
+# SMTP_USERNAME=
+# SMTP_PASSWORD=
+# SMTP_ADDRESS=
+
+# Configurações de Storage (opcional)
+# ACTIVE_STORAGE_SERVICE=local
+# STORAGE_BUCKET_NAME=
+
+# Monitoramento (opcional)
+# SENTRY_DSN=
+# NEW_RELIC_LICENSE_KEY= 

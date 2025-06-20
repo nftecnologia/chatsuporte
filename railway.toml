@@ -1,0 +1,17 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "bundle install && pnpm install && SECRET_KEY_BASE=precompile_placeholder RAILS_LOG_TO_STDOUT=enabled bundle exec rake assets:precompile"
+
+[deploy]
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[[services]]
+name = "web"
+startCommand = "bundle exec rails ip_lookup:setup && bin/rails server -p $PORT -e $RAILS_ENV"
+
+[[services]]
+name = "worker"
+startCommand = "bundle exec rails ip_lookup:setup && bundle exec sidekiq -C config/sidekiq.yml" 
