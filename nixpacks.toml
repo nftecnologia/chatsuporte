@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ['nodejs-18_x', 'pnpm-8_x', 'ruby_3_2', 'postgresql', 'pkg-config', 'openssl', 'libyaml']
+nixPkgs = ['nodejs', 'pnpm', 'ruby_3_2', 'postgresql', 'pkg-config', 'openssl', 'libyaml']
 
 [phases.build]
 cmds = [
